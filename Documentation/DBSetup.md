@@ -4,7 +4,7 @@
   - open Postgres app, double click database
 2. Create
   - `=#` CREATE DATABASE my_cool_db_name;
-    refresh postgres app to verify db was created
+    - refresh postgres app to verify db was created
 3. Vapor App (Swift/Xcode)
 
   - a. Model
