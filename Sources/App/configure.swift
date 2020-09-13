@@ -6,12 +6,14 @@ import Vapor
 public func configure(_ app: Application) throws {
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
-
+    let hostName = "localhost"
+    let userName = "postgres"
+    let dbName = "best_movies_db"
     app.databases.use(.postgres(
-        hostname: Environment.get("DATABASE_HOST") ?? "localhost",
-        username: Environment.get("DATABASE_USERNAME") ?? "vapor_username",
-        password: Environment.get("DATABASE_PASSWORD") ?? "vapor_password",
-        database: Environment.get("DATABASE_NAME") ?? "best_movies_db"
+        hostname: Environment.get("DATABASE_HOST") ?? hostName,
+        username: Environment.get("DATABASE_USERNAME") ?? userName,
+        password: Environment.get("DATABASE_PASSWORD") ?? "",
+        database: Environment.get("DATABASE_NAME") ?? dbName
     ), as: .psql)
 
     app.migrations.add(CreateMovie())
