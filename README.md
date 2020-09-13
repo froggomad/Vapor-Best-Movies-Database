@@ -9,3 +9,5 @@
   - `choose database type:` 1. Postgres
 
 ### 2. [Database Setup](Documentation/DBSetup.md)
+
+### 3. [Heroku Deployment](Documentation/HerokuSetup.md)
