@@ -1,9 +1,9 @@
 import Fluent
 import Vapor
 
-final class Movie: Model, Content {
+final class Actor: Model, Content {
     static let schema = Table.movies.rawValue
-    
+
     @ID(key: .id)
     var id: UUID?
 
@@ -11,9 +11,9 @@ final class Movie: Model, Content {
     var title: String
 
     @Siblings(through: MovieActor.self,
-              from: \.$movie,
-              to: \.$actor)
-    var actors: [Actor]
+              from: \.$actor,
+              to: \.$movie)
+    var movies: [Movie]
 
     init() { }
 
