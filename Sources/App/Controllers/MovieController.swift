@@ -6,7 +6,7 @@ struct MovieController: RouteCollection {
         let movies = routes.grouped(.movies)
         movies.get(use: index)
         movies.post(use: create)
-        movies.group(":todoID") { todo in
+        movies.group(.movieId) { todo in
             todo.delete(use: delete)
         }
     }
@@ -21,19 +21,10 @@ struct MovieController: RouteCollection {
     }
 
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
-        return Movie.find(req.parameters.get(Parameter.todoID.rawValue), on: req.db)
+        return Movie.find(req.parameters.get(Parameter.movieId.rawValue), on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)
     }
 }
 
-enum Parameter: String {
-    case todoID
-}
-
-extension PathComponent {
-    static var movies = PathComponent(stringLiteral: Table.movies.rawValue)
-    // MARK: - Parameters -
-    static var todoID = PathComponent(stringLiteral: ":\(Parameter.todoID)")
-}
