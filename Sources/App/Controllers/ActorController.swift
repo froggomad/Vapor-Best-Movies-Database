@@ -12,7 +12,7 @@ struct ActorController: RouteCollection {
     }
 
     func index(req: Request) throws -> EventLoopFuture<[Actor]> {
-        return Actor.query(on: req.db).all()
+        return Actor.query(on: req.db).with(\.$movies).all()
     }
 
     func create(req: Request) throws -> EventLoopFuture<Actor> {
