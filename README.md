@@ -96,11 +96,11 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a up and running follow these simple steps.
+To get up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This is what you need to use this repo.
 * Swift 5
 * Vapor 4
 
