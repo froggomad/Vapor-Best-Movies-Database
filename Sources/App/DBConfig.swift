@@ -32,20 +32,25 @@ enum Column: FieldKey {
     case name
 }
 
-enum Parameter: String {
-    case movieId
-    case actorId
-}
-
 extension PathComponent {
     static var movies = PathComponent(stringLiteral: Table.movies.rawValue)
     static var actors = PathComponent(stringLiteral: Table.actors.rawValue)
     // MARK: - Parameters -
-    static var movieId = PathComponent(stringLiteral: ":\(Parameter.movieId)")
-    static var actorId = PathComponent(stringLiteral: ":\(Parameter.actorId)")
+    static var movieId = PathComponent(stringLiteral: ":\(Relationship.movieId.rawValue)")
+    static var actorId = PathComponent(stringLiteral: ":\(Relationship.actorId.rawValue)")
 }
 
 enum Relationship: FieldKey {
     case movieId = "movie_id"
     case actorId = "actor_id"
+}
+
+extension String {
+    static var movieId: String {
+        Relationship.movieId.rawValue.description
+    }
+
+    static var actorId: String {
+        Relationship.actorId.rawValue.description
+    }
 }

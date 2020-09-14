@@ -21,7 +21,7 @@ struct MovieController: RouteCollection {
     }
 
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
-        return Movie.find(req.parameters.get(Parameter.movieId.rawValue), on: req.db)
+        return Movie.find(req.parameters.get(.movieId), on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)

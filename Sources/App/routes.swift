@@ -12,4 +12,5 @@ func routes(_ app: Application) throws {
 
     try app.register(collection: MovieController())
     try app.register(collection: ActorController())
+    try app.register(collection: MovieActorController())
 }

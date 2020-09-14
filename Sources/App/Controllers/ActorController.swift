@@ -21,7 +21,7 @@ struct ActorController: RouteCollection {
     }
 
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
-        return Actor.find(req.parameters.get(Parameter.actorId.rawValue), on: req.db)
+        return Actor.find(req.parameters.get(.actorId), on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)
