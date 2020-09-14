@@ -48,7 +48,7 @@
   <p align="center">
     Featuring actors, movies, and a Many-to-many relationship between them.
     <br />
-    <a href="https://github.com/froggomad/Vapor-Best-Movies-Database/Documentation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/froggomad/Vapor-Best-Movies-Database/tree/master/Documentation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://best-movies-db.herokuapp.com/movies">View Movies</a>
