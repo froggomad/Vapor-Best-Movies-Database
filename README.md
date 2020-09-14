@@ -35,8 +35,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/froggomad/Vapor-Best-Movies-Database">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://vapor.codes/img/logo.7c12f228.png" alt="Logo" width="80" height="80">
   </a>
+  <a href="https://github.com/froggomad/Vapor-Best-Movies-Database">
+    <img src="https://i.pinimg.com/originals/e5/c2/52/e5c252e15c98f80ee030e1ef6f04bef6.png" alt="Logo" width="80" height="80">
+  </a>
+  
+  
 
   <h3 align="center">Best Movies Database</h3>
 
@@ -78,33 +83,26 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`froggomad`, `Vapor-Best-Movies-Database`, `KennyDubroff`, `kenny.dubroff@kennydubroff.com`
-
+![GET Movies][product-screenshot]
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [Vapor 4](https://vapor.codes/)
+* [Swift 5](https://developer.apple.com/swift/)
+* [Xcode 11.6](https://developer.apple.com/xcode/)
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get a up and running follow these simple steps.
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
+* Swift 5
+* Vapor 4
 
 ## Initial Setup
 
@@ -123,9 +121,15 @@ npm install npm@latest -g
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* [GET Movies](https://best-movies-db.herokuapp.com/movies)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+* [POST Movie](https://best-movies-db.herokuapp.com/movies) - Include `{"title":"foo"}` in your request body
+
+* [GET Actors](https://best-movies-db.herokuapp.com/actors)
+
+* [POST Actors](https://best-movies-db.herokuapp.com/actors) - Include `{"name":"foo"}` in your request body
+
+* Link Actor To Movie (and vice-versa) - https://best-movies-db.herokuapp.com/movies/`movie_id`/actors/`actor_id`
 
 
 
@@ -168,12 +172,8 @@ Project Link: [https://github.com/froggomad/Vapor-Best-Movies-Database](https://
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
-
-
-
+* [Ray Wenderlich Server-Side Swift](https://www.raywenderlich.com/server-side-swift)
+* [Mohammad Azam](https://www.udemy.com/user/mohammad-azam-2/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -190,5 +190,5 @@ Project Link: [https://github.com/froggomad/Vapor-Best-Movies-Database](https://
 [license-url]: https://github.com/froggomad/Vapor-Best-Movies-Database/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/froggomad
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/best-movies-Insomnia.png
 
