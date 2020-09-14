@@ -8,6 +8,7 @@
 import Fluent
 import Vapor
 
+///used to return move and actor in GET and POST requests
 struct MovieActorObject: ResponseEncodable {
     func encodeResponse(for req: Request) -> EventLoopFuture<Response> {
         let movie = Movie.find(req.parameters.get(.movieId), on: req.db)
@@ -27,6 +28,7 @@ struct MovieActorObject: ResponseEncodable {
 }
 
 class MovieActorController: RouteCollection {
+    // MARK: - Init -
     func boot(routes: RoutesBuilder) throws {
         let movieActors = routes.grouped(.movies, .movieId, .actors, .actorId)
         movieActors.get(use: index)
@@ -36,6 +38,7 @@ class MovieActorController: RouteCollection {
         }
     }
 
+    // MARK: - Read -
     func index(req: Request) throws -> EventLoopFuture<MovieActorObject> {
         let movie = Movie.find(req.parameters.get(.movieId), on: req.db)
             .unwrap(or: Abort(.notFound))
@@ -48,6 +51,7 @@ class MovieActorController: RouteCollection {
         }.transform(to: MovieActorObject(actor: actor, movie: movie))
     }
 
+    // MARK: - Create -
     func create(req: Request) throws -> EventLoopFuture<MovieActorObject>{
         let movie = Movie.find(req.parameters.get(.movieId), on: req.db)
             .unwrap(or: Abort(.notFound))
@@ -59,7 +63,7 @@ class MovieActorController: RouteCollection {
             movie.$actors.attach(actor, on: req.db)
         }.transform(to: MovieActorObject(actor: actor, movie: movie))
     }
-
+    // MARK: - Delete -
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
         let movie = Movie.find(req.parameters.get(.movieId), on: req.db)
             .unwrap(or: Abort(.notFound))

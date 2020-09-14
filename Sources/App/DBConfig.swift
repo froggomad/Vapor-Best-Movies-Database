@@ -10,6 +10,14 @@ import Vapor
 
 typealias Schema = Table
 
+// MARK: - Table Names -
+enum Table: String {
+    case movies
+    case actors
+    case movieActors
+}
+
+// MARK: - Custom Field Keys -
 extension FieldKey {
     // MARK: - Columns -
     static var title = Column.title.rawValue
@@ -18,12 +26,6 @@ extension FieldKey {
     // MARK: - Relationships -
     static var movieRelationship = Relationship.movieId.rawValue
     static var actorRelationship = Relationship.actorId.rawValue
-}
-
-enum Table: String {
-    case movies
-    case actors
-    case movieActors
 }
 
 enum Column: FieldKey {
