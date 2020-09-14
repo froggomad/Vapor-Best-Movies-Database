@@ -8,7 +8,7 @@
 3. Vapor App (Swift/Xcode)
 
   - a. Model
-    - use Todo.swift as template (comes with project)
+    - use Todo.swift as template (comes with new Vapor project)
   - b. Controller
     - use TodoController.swift as template
   - c. Register routes
