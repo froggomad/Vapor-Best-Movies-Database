@@ -4,7 +4,7 @@ struct CreateActor: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema(Table.actors.rawValue)
             .id()
-            .field(.title, .string, .required)
+            .field(.name, .string, .required)
             .create()
     }
 

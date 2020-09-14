@@ -13,6 +13,7 @@ typealias Schema = Table
 extension FieldKey {
     // MARK: - Columns -
     static var title = Column.title.rawValue
+    static var name = Column.name.rawValue
 
     // MARK: - Relationships -
     static var movieRelationship = Relationship.movieId.rawValue
@@ -33,12 +34,15 @@ enum Column: FieldKey {
 
 enum Parameter: String {
     case movieId
+    case actorId
 }
 
 extension PathComponent {
     static var movies = PathComponent(stringLiteral: Table.movies.rawValue)
+    static var actors = PathComponent(stringLiteral: Table.actors.rawValue)
     // MARK: - Parameters -
     static var movieId = PathComponent(stringLiteral: ":\(Parameter.movieId)")
+    static var actorId = PathComponent(stringLiteral: ":\(Parameter.actorId)")
 }
 
 enum Relationship: FieldKey {

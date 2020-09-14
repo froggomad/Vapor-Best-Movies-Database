@@ -23,6 +23,8 @@ public func configure(_ app: Application) throws {
             ), as: .psql)
     }
 
+    
+    
     app.migrations.add(CreateMovie())
     app.migrations.add(CreateActor())
     app.migrations.add(CreateMovieActor())
