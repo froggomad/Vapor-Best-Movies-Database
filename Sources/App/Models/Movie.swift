@@ -2,7 +2,7 @@ import Fluent
 import Vapor
 
 final class Movie: Model, Content {
-    static let schema = Table.movies.rawValue
+    static let schema = Schema.movies.rawValue
     
     @ID(key: .id)
     var id: UUID?

@@ -9,7 +9,7 @@ import Fluent
 
 struct CreateMovieActor: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
-        database.schema(Table.movieActors.rawValue)
+        database.schema(Schema.movieActors.rawValue)
         .id()
         .field(Relationship.movieId.rawValue, .uuid, .required,
                .references(Table.movies.rawValue, .id))
@@ -20,7 +20,7 @@ struct CreateMovieActor: Migration {
     }
 
     func revert(on database: Database) -> EventLoopFuture<Void> {
-        database.schema(Table.movieActors.rawValue)
+        database.schema(Schema.movieActors.rawValue)
         .delete()
     }
 

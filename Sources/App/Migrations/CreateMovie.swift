@@ -2,7 +2,7 @@ import Fluent
 
 struct CreateMovie: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
-        return database.schema(Table.movies.rawValue)
+        return database.schema(Schema.movies.rawValue)
             .id()
             .field(.title, .string, .required)
             .create()
