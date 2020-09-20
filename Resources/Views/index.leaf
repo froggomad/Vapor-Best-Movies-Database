@@ -1,12 +1,72 @@
 <!Doctype html>
 <html>
+    <head>
+        <title>Best Movies DB built with Vapor</title>
+        <style>
 
-    <h1>Welcome to Best Movies DB!</h1>
-    <h3>Please take a look around:</h3>
-    <ul>
-        <li>
-            <a href="/movies">List all movies</a>
-        </li>
-    <ul>
+            pre,
+            code {
+                background-color: snow;
+            }
 
+            .drab-highlight {
+                background-color: lightgray;
+                border-bottom: 1px solid black;
+                padding: 5px;
+                margin: 5px;
+            }
+
+            .requests {
+                border: 1px solid black;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Welcome to Best Movies DB!</h1>
+        <h3>Please take a look around:</h3>
+        <div class="requests">
+
+            <h3 class="drab-highlight">GET Requests</h3>
+            <ul>
+                <li>
+                    <a href="/movies">List all movies</a>
+                </li>
+                <li>
+                    <a href="/actors">List all actors</a>
+                </li>
+            </ul>
+
+            <h3 class="drab-highlight">POST Requests</h3>
+            <!--Movies-->
+            <ul>
+                <li>
+                    POST a movie: "/movies"
+                    <ul>
+                        <li>
+                            Required JSON (where `*` is a wildcard):
+                            <code>
+                            { "title":"`*`"}
+                            </code>
+                        </li>
+                    </ul>
+                </li>
+                <!--Actors-->
+                <li>
+                    POST an actor: "/actors"
+                    <ul>
+                        <li>
+                            Required JSON (where `*` is a wildcard):
+                            <code>
+                            { "name":"`*`"}
+                            </code>
+                        </li>
+                    </ul>
+                </li>
+            <ul>
+
+        </div>
+    </body>
+    
 </html>
