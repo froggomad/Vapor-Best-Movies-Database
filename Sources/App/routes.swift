@@ -10,6 +10,7 @@ extension String {
     static func path(_ name: RoutePath) -> String {
         name.rawValue
     }
+    
 }
 
 extension PathComponent {
@@ -17,6 +18,7 @@ extension PathComponent {
 }
 
 func routes(_ app: Application) throws {
+    ///render a view on / using index.leaf
     app.get { req -> EventLoopFuture<View> in
         req.view.render(.path(.index))
     }
