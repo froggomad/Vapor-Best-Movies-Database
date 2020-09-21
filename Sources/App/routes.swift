@@ -1,13 +1,26 @@
 import Fluent
 import Vapor
 
-func routes(_ app: Application) throws {
-    app.get { req in
-        return "It works!"
+extension String {
+
+    enum RoutePath: String {
+        case index
     }
 
-    app.get("hello") { req -> String in
-        return "Hello, world!"
+    static func path(_ name: RoutePath) -> String {
+        name.rawValue
+    }
+    
+}
+
+extension PathComponent {
+    static let index = PathComponent(stringLiteral: .path(.index))
+}
+
+func routes(_ app: Application) throws {
+    ///render a view on / using index.leaf
+    app.get { req -> EventLoopFuture<View> in
+        req.view.render(.path(.index))
     }
 
     try app.register(collection: MovieController())
